@@ -1,11 +1,3 @@
-//
-//  Int+Utilities.swift
-//  dnd-tools
-//
-//  Created by Brandon Assing on 2022-02-08.
-//
-
-import Foundation
 
 extension Int {
 	// Converts cm to feet and inches

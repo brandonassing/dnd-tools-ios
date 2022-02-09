@@ -1,9 +1,3 @@
-//
-//  NameAPIService.swift
-//  dnd-tools
-//
-//  Created by Brandon Assing on 2022-02-09.
-//
 
 import Combine
 

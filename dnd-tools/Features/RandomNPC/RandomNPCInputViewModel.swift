@@ -1,11 +1,4 @@
-//
-//  RandomNPCInputViewModel.swift
-//  dnd-tools
-//
-//  Created by Brandon Assing on 2022-02-08.
-//
 
-import Foundation
 import Combine
 import SwiftUI
 
