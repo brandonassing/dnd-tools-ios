@@ -9,8 +9,16 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("DnD Tools")
-            .padding()
+		NavigationView {
+			VStack {
+				Text("DnD Tools")
+					.padding()
+				
+				NavigationLink(destination: RandomNPC.InputView()) {
+					Text("Random NPC Generator")
+				}
+			}
+		}
     }
 }
 
