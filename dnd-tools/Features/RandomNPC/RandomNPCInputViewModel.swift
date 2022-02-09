@@ -11,6 +11,8 @@ import SwiftUI
 
 extension RandomNPC {
 	class InputViewModel: ObservableObject, ViewModel {
+		typealias Dependencies = HasNameRepository
+		
 		struct Inputs {
 			let generate: PassthroughSubject<Void, Never>
 		}
@@ -22,7 +24,7 @@ extension RandomNPC {
 		var inputs: Inputs
 		var outputs: Outputs
 		
-		init() {
+		init(dependencies: Dependencies) {
 			let generateSubject = PassthroughSubject<Void, Never>()
 			self.inputs = Inputs(
 				generate: generateSubject

@@ -11,7 +11,7 @@ import Combine
 extension RandomNPC {
 	struct InputView: View {
 		
-		@ObservedObject private var viewmodel = InputViewModel()
+		@ObservedObject private var viewmodel = InputViewModel(dependencies: GlobalDependencyContainer.shared)
 		@State private var generatedNPC: NPC?
 		
 		private var disposables = Set<AnyCancellable>()
