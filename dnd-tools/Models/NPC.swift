@@ -101,8 +101,7 @@ extension Race {
 		}
 	}
 	
-	// TODO: height based on age group
-	var heightRange: ClosedRange<Int> {
+	var adultHeightRange: ClosedRange<Int> {
 		switch self {
 		case .human, .halfElf, .tiefling:
 			return 150...200

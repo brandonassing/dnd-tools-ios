@@ -33,10 +33,16 @@ extension RandomNPC {
 					let race = Race.allCases.randomElement() ?? .human
 					let ageGroup = AgeGroup.allCases.randomElement() ?? .adult
 					let bodyType = BodyType.allCases.randomElement() ?? .average
-					guard let randomHeight = race.heightRange.randomElement() else {
+					guard let randomHeight = race.adultHeightRange.randomElement() else {
 						return nil
 					}
-					return NPC(name: "Bob Vance", heightCm: Int(randomHeight), bodyType: bodyType, race: race, ageGroup: ageGroup)
+					var height = Double(randomHeight)
+					if ageGroup == .child {
+						height = height * 0.75
+					} else if ageGroup == .infant {
+						height = height * 0.5
+					}
+					return NPC(name: "Bob Vance", heightCm: Int(height), bodyType: bodyType, race: race, ageGroup: ageGroup)
 				})
 				.receive(on: DispatchQueue.main)
 				.eraseToAnyPublisher()
