@@ -5,7 +5,7 @@ import Combine
 extension RandomNPC {
 	struct InputView: View {
 		
-		@ObservedObject private var viewmodel = InputViewModel(dependencies: GlobalDependencyContainer.shared)
+		@ObservedObject private var viewModel = InputViewModel(dependencies: GlobalDependencyContainer.shared)
 		@State private var generatedNPC: NPC?
 		
 		private var disposables = Set<AnyCancellable>()
@@ -17,12 +17,12 @@ extension RandomNPC {
 		var body: some View {
 			ScrollView {
 				VStack {
-					Button(action: viewmodel.inputs.generate.send) {
+					Button(action: viewModel.inputs.generate.send) {
 						Text("Generate")
 							.padding()
 							.buttonStyle(.bordered)
 					}
-					.onReceive(self.viewmodel.outputs.npc, perform: { npc in
+					.onReceive(self.viewModel.outputs.npc, perform: { npc in
 						if let npc = npc {
 							self.generatedNPC = npc
 						}
@@ -35,7 +35,7 @@ extension RandomNPC {
 		}
 		
 		private mutating func setup() {
-			self.viewmodel.outputs.npc
+			self.viewModel.outputs.npc
 				.sink(receiveValue: { npc in
 
 				})
