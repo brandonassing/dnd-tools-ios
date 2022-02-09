@@ -71,7 +71,8 @@ extension RandomNPC {
 					}
 				})
 			
-			let npc = npcInfo.zip(npcNameSuccess, { (npcInfo, name) -> NPC? in
+			let npc = Publishers.Zip(npcInfo, npcNameSuccess)
+				.map({ (npcInfo, name) -> NPC? in
 					guard let npcInfo = npcInfo, let name = name else {
 						return nil
 					}

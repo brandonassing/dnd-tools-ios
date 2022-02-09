@@ -45,7 +45,7 @@ fileprivate extension Race {
 		case .elf:
 			return "Elvish"
 		case .gnome:
-			return "" // TODO
+			return "German"
 		case .dragonborn:
 			return "Draconic"
 		case .halfElf:

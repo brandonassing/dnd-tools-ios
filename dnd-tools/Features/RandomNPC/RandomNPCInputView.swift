@@ -37,7 +37,7 @@ extension RandomNPC {
 		private mutating func setup() {
 			self.viewmodel.outputs.npc
 				.sink(receiveValue: { npc in
-					print(npc)
+
 				})
 				.store(in: &self.disposables)
 		}
