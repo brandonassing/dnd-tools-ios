@@ -14,6 +14,24 @@ struct NPC: Identifiable {
 	let bodyType: BodyType
 	let race: Race
 	let ageGroup: AgeGroup
+	let gender: Gender
+}
+
+enum Gender: String, CaseIterable {
+	case male
+	case female
+	case nonBinary
+}
+
+extension Gender {
+	var name: String {
+		switch self {
+		case .male, .female:
+			return self.rawValue.capitalizingFirstLetter()
+		case .nonBinary:
+			return "Non-binary"
+		}
+	}
 }
 
 enum AgeGroup: String, CaseIterable {
