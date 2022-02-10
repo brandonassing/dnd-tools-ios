@@ -15,9 +15,12 @@ extension RandomNPC {
 				VStack {
 					Button(action: viewModel.inputs.generate.send) {
 						Text("Generate")
+							.foregroundColor(StyleGuide.Color.Text.light)
 							.padding()
-							.buttonStyle(.bordered)
+							.frame(maxWidth: .infinity)
 					}
+					.background(StyleGuide.Color.secondary)
+					.cornerRadius(5)
 					.onReceive(self.viewModel.outputs.npc, perform: { npc in
 						if let npc = npc {
 							self.generatedNPC = npc
@@ -27,7 +30,10 @@ extension RandomNPC {
 						RandomNPC.DetailsView(npc: npc)
 					}
 				}
+				.padding()
 			}
+			.frame(maxWidth: .infinity)
+			.background(StyleGuide.Color.background)
 		}
 	}
 
