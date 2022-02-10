@@ -7,12 +7,28 @@ extension RandomNPC {
 		
 		@StateObject private var viewModel = InputViewModel(dependencies: GlobalDependencyContainer.shared)
 		@State private var generatedNPC: NPC?
+		@State private var selectedRace: Race?
 		
 		private var disposables = Set<AnyCancellable>()
 		
 		var body: some View {
 			ScrollView {
 				VStack {
+					let anyRaceText = "Any race"
+					
+					Menu(self.selectedRace?.name ?? anyRaceText) {
+						Button(anyRaceText, action: { self.viewModel.inputs.selectedRace.send(nil) })
+						
+						ForEach(self.viewModel.races, id: \.rawValue) { race in
+							Button(race.name, action: { self.viewModel.inputs.selectedRace.send(race) })
+						}
+					}
+					.onReceive(self.viewModel.outputs.selectedRace, perform: { race in
+						self.selectedRace = race
+					})
+					
+					Spacer(minLength: 20)
+
 					PrimaryButtonView(text: "Generate", action: viewModel.inputs.generate.send)
 					.onReceive(self.viewModel.outputs.npc, perform: { npc in
 						if let npc = npc {

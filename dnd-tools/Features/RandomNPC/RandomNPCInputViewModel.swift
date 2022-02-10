@@ -8,21 +8,32 @@ extension RandomNPC {
 		typealias NPCInfo = (heightCm: Int, bodyType: BodyType, race: Race, ageGroup: AgeGroup, gender: Gender)
 		
 		struct Inputs {
+			let selectedRace: CurrentValueSubject<Race?, Never>
 			let generate: PassthroughSubject<Void, Never>
 		}
 		
 		struct Outputs {
+			let selectedRace: AnyPublisher<Race?, Never>
 			let npc: AnyPublisher<NPC?, Never>
 		}
+		
+		// TODO: not sure if this is the best way to output races
+		@Published var races: [Race] = Race.allCases
 		
 		var inputs: Inputs
 		var outputs: Outputs
 		
 		init(dependencies: Dependencies) {
+			// TODO: not sure how to use this with `withLatestFrom`
+			let selectedRaceSubject = CurrentValueSubject<Race?, Never>(Race?.none)
 			let generateSubject = PassthroughSubject<Void, Never>()
 			self.inputs = Inputs(
+				selectedRace: selectedRaceSubject,
 				generate: generateSubject
 			)
+			
+			let selectedRace = selectedRaceSubject
+				.eraseToAnyPublisher()
 			
 			let npcInfo = generateSubject
 				.map({ _ -> NPCInfo? in
@@ -81,6 +92,7 @@ extension RandomNPC {
 				.eraseToAnyPublisher()
 
 			self.outputs = Outputs(
+				selectedRace: selectedRace,
 				npc: npc
 			)
 		}
