@@ -13,9 +13,11 @@ extension RandomNPC {
 		
 		var body: some View {
 			ScrollView {
-				VStack {
-					let anyRaceText = "Any race"
+				VStack(spacing: 0) {
+					Text("Race")
+						.textStyle(.sectionHeader)
 					
+					let anyRaceText = "Any race"
 					Menu(self.selectedRace?.name ?? anyRaceText) {
 						Button(anyRaceText, action: { self.viewModel.inputs.selectedRace.send(nil) })
 						

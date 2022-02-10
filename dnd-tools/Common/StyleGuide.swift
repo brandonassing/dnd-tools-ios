@@ -46,6 +46,8 @@ extension StyleGuide {
 	enum TextStyle {
 		case header
 		case subheader
+		case sectionHeader
+		case sectionSubheader
 		case standard
 	}
 }
@@ -58,17 +60,24 @@ extension StyleGuide.TextStyle {
 			return StyleGuide.Color.Text.primary
 		case .subheader:
 			return StyleGuide.Color.Text.secondary
+		case .sectionHeader:
+			return StyleGuide.Color.Text.primary
+		case .sectionSubheader:
+			return StyleGuide.Color.Text.secondary
 		case .standard:
 			return StyleGuide.Color.Text.primary
 		}
 	}
 	
-	// TODO: Update these values
 	var font: Font {
 		switch self {
 		case .header:
-			return Font.headline
+			return Font.title
 		case .subheader:
+			return Font.title2
+		case .sectionHeader:
+			return Font.headline
+		case .sectionSubheader:
 			return Font.subheadline
 		case .standard:
 			return Font.body
