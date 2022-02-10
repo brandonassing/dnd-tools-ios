@@ -60,11 +60,6 @@ fileprivate extension Race {
 
 fileprivate extension Gender {
 	var apiValue: String {
-		switch self {
-		case .male, .female:
-			return self.name
-		case .nonBinary:
-			return ([Gender.male, Gender.female].randomElement() ?? Gender.male).name
-		}
+		return self.name
 	}
 }

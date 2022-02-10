@@ -14,17 +14,11 @@ struct NPC: Identifiable {
 enum Gender: String, CaseIterable {
 	case male
 	case female
-	case nonBinary
 }
 
 extension Gender {
 	var name: String {
-		switch self {
-		case .male, .female:
-			return self.rawValue.capitalizingFirstLetter()
-		case .nonBinary:
-			return "Non-binary"
-		}
+		return self.rawValue.capitalizingFirstLetter()
 	}
 }
 
