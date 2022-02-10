@@ -4,16 +4,29 @@ import SwiftUI
 extension RandomNPC {
 	struct DetailsView: View {
 		let npc: NPC
+		
+		@Environment(\.presentationMode) var presentationMode
 
 		var body: some View {
-			VStack {
-				Text(self.npc.name)
-					.padding()
-				Text(self.npc.race.name)
-				Text(self.npc.gender.name)
-				Text(self.npc.ageGroup.name)
-				Text("Height: \(self.npc.heightCm.toFeetAndInches().feet)'\(self.npc.heightCm.toFeetAndInches().inches)\"")
-				Text("Body type: \(self.npc.bodyType.name)")
+			NavigationView {
+				VStack {
+					Text(self.npc.race.name)
+					Text(self.npc.gender.name)
+					Text(self.npc.ageGroup.name)
+					Text("Height: \(self.npc.heightCm.toFeetAndInches().feet)'\(self.npc.heightCm.toFeetAndInches().inches)\"")
+					Text("Body type: \(self.npc.bodyType.name)")
+				}
+				.navigationTitle(self.npc.name)
+				.navigationBarTitleDisplayMode(.large)
+				.toolbar {
+					ToolbarItem(placement: .navigationBarLeading) {
+						Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+							Image(systemName: "xmark")
+								.foregroundColor(.secondary)
+						}
+					}
+				}
+
 			}
 		}
 	}

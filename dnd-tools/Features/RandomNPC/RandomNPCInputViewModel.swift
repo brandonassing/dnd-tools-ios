@@ -36,8 +36,6 @@ extension RandomNPC {
 					var height = Double(randomHeight)
 					if ageGroup == .child {
 						height = height * 0.75
-					} else if ageGroup == .infant {
-						height = height * 0.5
 					}
 					return (heightCm: Int(height), bodyType: bodyType, race: race, ageGroup: ageGroup, gender: gender)
 				})

@@ -29,7 +29,6 @@ extension Gender {
 }
 
 enum AgeGroup: String, CaseIterable {
-	case infant
 	case child
 	case youth
 	case adult
