@@ -41,6 +41,7 @@ extension RandomNPC {
 					}
 					return (heightCm: Int(height), bodyType: bodyType, race: race, ageGroup: ageGroup, gender: gender)
 				})
+				.share()
 			
 			let npcNameRequest = npcInfo
 				.map({ npcInfo -> AnyPublisher<Result<String, Error>, Never> in

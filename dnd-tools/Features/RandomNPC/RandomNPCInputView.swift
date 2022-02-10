@@ -5,14 +5,10 @@ import Combine
 extension RandomNPC {
 	struct InputView: View {
 		
-		@ObservedObject private var viewModel = InputViewModel(dependencies: GlobalDependencyContainer.shared)
+		@StateObject private var viewModel = InputViewModel(dependencies: GlobalDependencyContainer.shared)
 		@State private var generatedNPC: NPC?
 		
 		private var disposables = Set<AnyCancellable>()
-
-		init() {
-			self.setup()
-		}
 		
 		var body: some View {
 			ScrollView {
@@ -32,14 +28,6 @@ extension RandomNPC {
 					}
 				}
 			}
-		}
-		
-		private mutating func setup() {
-			self.viewModel.outputs.npc
-				.sink(receiveValue: { npc in
-
-				})
-				.store(in: &self.disposables)
 		}
 	}
 
