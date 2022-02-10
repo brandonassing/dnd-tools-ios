@@ -13,14 +13,7 @@ extension RandomNPC {
 		var body: some View {
 			ScrollView {
 				VStack {
-					Button(action: viewModel.inputs.generate.send) {
-						Text("Generate")
-							.foregroundColor(StyleGuide.Color.Text.light)
-							.padding()
-							.frame(maxWidth: .infinity)
-					}
-					.background(StyleGuide.Color.secondary)
-					.cornerRadius(5)
+					PrimaryButtonView(text: "Generate", action: viewModel.inputs.generate.send)
 					.onReceive(self.viewModel.outputs.npc, perform: { npc in
 						if let npc = npc {
 							self.generatedNPC = npc
