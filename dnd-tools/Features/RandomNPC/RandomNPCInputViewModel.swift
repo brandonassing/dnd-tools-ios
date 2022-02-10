@@ -9,32 +9,46 @@ extension RandomNPC {
 		
 		struct Inputs {
 			let selectedRace: CurrentValueSubject<Race?, Never>
+			let selectedAge: CurrentValueSubject<AgeGroup?, Never>
+			let selectedGender: CurrentValueSubject<Gender?, Never>
 			let generate: PassthroughSubject<Void, Never>
 		}
 		
 		struct Outputs {
 			let selectedRace: AnyPublisher<Race?, Never>
+			let selectedAge: AnyPublisher<AgeGroup?, Never>
+			let selectedGender: AnyPublisher<Gender?, Never>
 			let npc: AnyPublisher<NPC?, Never>
 		}
 		
 		// TODO: not sure if this is the best way to output races
-		@Published var races: [Race] = Race.allCases
-		
+		@Published var races = Race.allCases
+		@Published var ageGroups = AgeGroup.allCases
+		@Published var genders = Gender.allCases
+
 		var inputs: Inputs
 		var outputs: Outputs
 		
 		init(dependencies: Dependencies) {
 			// TODO: not sure how to use this with `withLatestFrom`
 			let selectedRaceSubject = CurrentValueSubject<Race?, Never>(Race?.none)
+			let selectedAgeSubject = CurrentValueSubject<AgeGroup?, Never>(AgeGroup?.none)
+			let selectedGenderSubject = CurrentValueSubject<Gender?, Never>(Gender?.none)
 			let generateSubject = PassthroughSubject<Void, Never>()
 			self.inputs = Inputs(
 				selectedRace: selectedRaceSubject,
+				selectedAge: selectedAgeSubject,
+				selectedGender: selectedGenderSubject,
 				generate: generateSubject
 			)
 			
 			let selectedRace = selectedRaceSubject
 				.eraseToAnyPublisher()
-			
+			let selectedAge = selectedAgeSubject
+				.eraseToAnyPublisher()
+			let selectedGender = selectedGenderSubject
+				.eraseToAnyPublisher()
+
 			let npcInfo = generateSubject
 				.map({ _ -> NPCInfo? in
 					let race = Race.allCases.randomElement() ?? .human
@@ -93,6 +107,8 @@ extension RandomNPC {
 
 			self.outputs = Outputs(
 				selectedRace: selectedRace,
+				selectedAge: selectedAge,
+				selectedGender: selectedGender,
 				npc: npc
 			)
 		}
