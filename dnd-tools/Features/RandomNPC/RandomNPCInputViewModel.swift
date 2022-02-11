@@ -1,6 +1,7 @@
 
 import Combine
 import SwiftUI
+import CombineExt
 
 extension RandomNPC {
 	class InputViewModel: ObservableObject, ViewModel {
@@ -29,6 +30,8 @@ extension RandomNPC {
 		var inputs: Inputs
 		var outputs: Outputs
 		
+		private var disposables = Set<AnyCancellable>()
+		
 		init(dependencies: Dependencies) {
 			// TODO: not sure how to use this with `withLatestFrom`
 			let selectedRaceSubject = CurrentValueSubject<Race?, Never>(Race?.none)
@@ -48,13 +51,20 @@ extension RandomNPC {
 				.eraseToAnyPublisher()
 			let selectedGender = selectedGenderSubject
 				.eraseToAnyPublisher()
+			
+			let selectedAttributes = Publishers.CombineLatest3(
+				selectedRace,
+				selectedAge,
+				selectedGender
+			)
 
 			let npcInfo = generateSubject
-				.map({ _ -> NPCInfo? in
-					let race = Race.allCases.randomElement() ?? .human
-					let ageGroup = AgeGroup.allCases.randomElement() ?? .adult
+				.withLatestFrom(selectedAttributes)
+				.map({ (race, age, gender) -> NPCInfo? in
+					let race = race ?? Race.allCases.randomElement() ?? .human
+					let ageGroup = age ?? AgeGroup.allCases.randomElement() ?? .adult
 					let bodyType = BodyType.allCases.randomElement() ?? .average
-					let gender = Gender.allCases.randomElement() ?? .male
+					let gender = gender ?? Gender.allCases.randomElement() ?? .male
 					guard let randomHeight = race.adultHeightRange.randomElement() else {
 						return nil
 					}
@@ -65,7 +75,7 @@ extension RandomNPC {
 					return (heightCm: Int(height), bodyType: bodyType, race: race, ageGroup: ageGroup, gender: gender)
 				})
 				.share()
-			
+						
 			let npcNameRequest = npcInfo
 				.map({ npcInfo -> AnyPublisher<Result<String, Error>, Never> in
 					guard let npcInfo = npcInfo else {

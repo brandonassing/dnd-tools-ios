@@ -18,53 +18,59 @@ extension RandomNPC {
 				VStack(spacing: 0) {
 					
 					// TODO: Can maybe turn into generic component using Generics and a ForEach?
-					Text("Race")
-						.textStyle(.sectionHeader)
-					let anyRaceText = "Any race"
-					Menu(self.selectedRace?.name ?? anyRaceText) {
-						Button(anyRaceText, action: { self.viewModel.inputs.selectedRace.send(nil) })
-						
-						ForEach(self.viewModel.races, id: \.rawValue) { race in
-							Button(race.name, action: { self.viewModel.inputs.selectedRace.send(race) })
+					Group {
+						Text("Race")
+							.textStyle(.sectionHeader)
+						let anyRaceText = "Any race"
+						Menu(self.selectedRace?.name ?? anyRaceText) {
+							Button(anyRaceText, action: { self.viewModel.inputs.selectedRace.send(nil) })
+							
+							ForEach(self.viewModel.races, id: \.rawValue) { race in
+								Button(race.name, action: { self.viewModel.inputs.selectedRace.send(race) })
+							}
 						}
+						.onReceive(self.viewModel.outputs.selectedRace, perform: { race in
+							self.selectedRace = race
+						})
 					}
-					.onReceive(self.viewModel.outputs.selectedRace, perform: { race in
-						self.selectedRace = race
-					})
 					
 					Spacer(minLength: 20)
 
-					Text("Age")
-						.textStyle(.sectionHeader)
-					let anyAgeText = "Any age"
-					Menu(self.selectedAge?.name ?? anyAgeText) {
-						Button(anyAgeText, action: { self.viewModel.inputs.selectedAge.send(nil) })
-						
-						ForEach(self.viewModel.ageGroups, id: \.rawValue) { age in
-							Button(age.name, action: { self.viewModel.inputs.selectedAge.send(age) })
+					Group {
+						Text("Age")
+							.textStyle(.sectionHeader)
+						let anyAgeText = "Any age"
+						Menu(self.selectedAge?.name ?? anyAgeText) {
+							Button(anyAgeText, action: { self.viewModel.inputs.selectedAge.send(nil) })
+							
+							ForEach(self.viewModel.ageGroups, id: \.rawValue) { age in
+								Button(age.name, action: { self.viewModel.inputs.selectedAge.send(age) })
+							}
 						}
+						.onReceive(self.viewModel.outputs.selectedAge, perform: { age in
+							self.selectedAge = age
+						})
 					}
-					.onReceive(self.viewModel.outputs.selectedAge, perform: { age in
-						self.selectedAge = age
-					})
 					
 					Spacer(minLength: 20)
 
-					Text("Gender")
-						.textStyle(.sectionHeader)
-					let anyGenderText = "Any gender"
-					Menu(self.selectedGender?.name ?? anyGenderText) {
-						Button(anyGenderText, action: { self.viewModel.inputs.selectedGender.send(nil) })
-						
-						ForEach(self.viewModel.genders, id: \.rawValue) { gender in
-							Button(gender.name, action: { self.viewModel.inputs.selectedGender.send(gender) })
+					Group {
+						Text("Gender")
+							.textStyle(.sectionHeader)
+						let anyGenderText = "Any gender"
+						Menu(self.selectedGender?.name ?? anyGenderText) {
+							Button(anyGenderText, action: { self.viewModel.inputs.selectedGender.send(nil) })
+							
+							ForEach(self.viewModel.genders, id: \.rawValue) { gender in
+								Button(gender.name, action: { self.viewModel.inputs.selectedGender.send(gender) })
+							}
 						}
+						.onReceive(self.viewModel.outputs.selectedGender, perform: { gender in
+							self.selectedGender = gender
+						})
 					}
-					.onReceive(self.viewModel.outputs.selectedGender, perform: { gender in
-						self.selectedGender = gender
-					})
 					
-					Spacer(minLength: 20)
+					Spacer(minLength: 50)
 
 					PrimaryButtonView(text: "Generate", action: viewModel.inputs.generate.send)
 					.onReceive(self.viewModel.outputs.npc, perform: { npc in
