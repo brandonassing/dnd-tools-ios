@@ -17,7 +17,7 @@ enum Gender: String, CaseIterable {
 }
 
 extension Gender {
-	var name: String {
+	var displayName: String {
 		return self.rawValue.capitalizingFirstLetter()
 	}
 }
@@ -30,7 +30,7 @@ enum AgeGroup: String, CaseIterable {
 }
 
 extension AgeGroup {
-	var name: String {
+	var displayName: String {
 		return self.rawValue.capitalizingFirstLetter()
 	}
 }
@@ -72,7 +72,7 @@ extension Race {
 		}
 	}
 	
-	var name: String {
+	var displayName: String {
 		switch self {
 		case .human, .halfling, .dwarf, .elf, .gnome, .dragonborn, .tiefling:
 			return self.rawValue.capitalizingFirstLetter()

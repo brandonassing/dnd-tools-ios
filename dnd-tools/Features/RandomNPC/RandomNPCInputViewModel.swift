@@ -33,7 +33,6 @@ extension RandomNPC {
 		private var disposables = Set<AnyCancellable>()
 		
 		init(dependencies: Dependencies) {
-			// TODO: not sure how to use this with `withLatestFrom`
 			let selectedRaceSubject = CurrentValueSubject<Race?, Never>(Race?.none)
 			let selectedAgeSubject = CurrentValueSubject<AgeGroup?, Never>(AgeGroup?.none)
 			let selectedGenderSubject = CurrentValueSubject<Gender?, Never>(Gender?.none)

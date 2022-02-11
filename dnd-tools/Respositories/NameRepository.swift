@@ -60,6 +60,6 @@ fileprivate extension Race {
 
 fileprivate extension Gender {
 	var apiValue: String {
-		return self.name
+		return self.displayName
 	}
 }

@@ -22,11 +22,11 @@ extension RandomNPC {
 						Text("Race")
 							.textStyle(.sectionHeader)
 						let anyRaceText = "Any race"
-						Menu(self.selectedRace?.name ?? anyRaceText) {
+						Menu(self.selectedRace?.displayName ?? anyRaceText) {
 							Button(anyRaceText, action: { self.viewModel.inputs.selectedRace.send(nil) })
 							
 							ForEach(self.viewModel.races, id: \.rawValue) { race in
-								Button(race.name, action: { self.viewModel.inputs.selectedRace.send(race) })
+								Button(race.displayName, action: { self.viewModel.inputs.selectedRace.send(race) })
 							}
 						}
 						.onReceive(self.viewModel.outputs.selectedRace, perform: { race in
@@ -40,11 +40,11 @@ extension RandomNPC {
 						Text("Age")
 							.textStyle(.sectionHeader)
 						let anyAgeText = "Any age"
-						Menu(self.selectedAge?.name ?? anyAgeText) {
+						Menu(self.selectedAge?.displayName ?? anyAgeText) {
 							Button(anyAgeText, action: { self.viewModel.inputs.selectedAge.send(nil) })
 							
 							ForEach(self.viewModel.ageGroups, id: \.rawValue) { age in
-								Button(age.name, action: { self.viewModel.inputs.selectedAge.send(age) })
+								Button(age.displayName, action: { self.viewModel.inputs.selectedAge.send(age) })
 							}
 						}
 						.onReceive(self.viewModel.outputs.selectedAge, perform: { age in
@@ -58,11 +58,11 @@ extension RandomNPC {
 						Text("Gender")
 							.textStyle(.sectionHeader)
 						let anyGenderText = "Any gender"
-						Menu(self.selectedGender?.name ?? anyGenderText) {
+						Menu(self.selectedGender?.displayName ?? anyGenderText) {
 							Button(anyGenderText, action: { self.viewModel.inputs.selectedGender.send(nil) })
 							
 							ForEach(self.viewModel.genders, id: \.rawValue) { gender in
-								Button(gender.name, action: { self.viewModel.inputs.selectedGender.send(gender) })
+								Button(gender.displayName, action: { self.viewModel.inputs.selectedGender.send(gender) })
 							}
 						}
 						.onReceive(self.viewModel.outputs.selectedGender, perform: { gender in
