@@ -86,6 +86,7 @@ extension RandomNPC {
 			}
 			.frame(maxWidth: .infinity)
 			.background(StyleGuide.Color.background)
+			.navigationBarTitle("NPC Generator")
 		}
 	}
 
