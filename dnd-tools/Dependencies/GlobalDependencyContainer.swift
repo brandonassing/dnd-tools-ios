@@ -1,5 +1,5 @@
 
-typealias AllDependencies = HasNameService & HasNameRepository
+typealias AllDependencies = HasNameService & HasNameRepository & HasLootService
 
 class GlobalDependencyContainer: AllDependencies {
 	
@@ -13,4 +13,7 @@ class GlobalDependencyContainer: AllDependencies {
 		CharacterNameRepository(dependencies: self)
 	}()
 
+	lazy var lootService: LootService = {
+		LootAPIService()
+	}()
 }
