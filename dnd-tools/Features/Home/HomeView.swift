@@ -20,7 +20,7 @@ struct HomeView: View {
 
 					ForEach(self.viewModel.menuItems, id: \.rawValue) { item in
 						Button(action: {}) {
-							NavigationLink(destination: item.route) {
+							NavigationLink(destination: item.route()) {
 								Text(item.displayName)
 									.foregroundColor(StyleGuide.Color.Text.light)
 									.padding()
@@ -50,11 +50,14 @@ struct HomeView_Previews: PreviewProvider {
 }
 
 extension HomeViewModel.MenuItem {
-	
-	var route: some View {
+
+	@ViewBuilder
+	func route() -> some View {
 		switch self {
 		case .npcGenerator:
-			return RandomNPC.InputView()
+			RandomNPC.InputView()
+		case .lootGenerator:
+			LootGenerationView()
 		}
 	}
 	

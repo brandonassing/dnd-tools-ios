@@ -11,11 +11,14 @@ class HomeViewModel: ObservableObject {
 extension HomeViewModel {
 	enum MenuItem: Int, CaseIterable {
 		case npcGenerator
-				
+		case lootGenerator
+		
 		var displayName: String {
 			switch self {
 			case .npcGenerator:
 				return "NPC Generator"
+			case .lootGenerator:
+				return "Loot Generator"
 			}
 		}
 	}
