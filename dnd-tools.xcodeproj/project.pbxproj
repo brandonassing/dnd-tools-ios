@@ -10,6 +10,7 @@
 		5CA0D64727B56D84003DCE71 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D64627B56D84003DCE71 /* StyleGuide.swift */; };
 		5CA0D64A27B5824E003DCE71 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D64927B5824E003DCE71 /* PrimaryButtonView.swift */; };
 		5CA0D64D27B6F31D003DCE71 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA0D64C27B6F31D003DCE71 /* CombineExt */; };
+		5CA0D64F27B73D34003DCE71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D64E27B73D34003DCE71 /* HomeViewModel.swift */; };
 		5CB9EE3427B30A8600F39FF9 /* dnd_toolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9EE3327B30A8600F39FF9 /* dnd_toolsApp.swift */; };
 		5CB9EE3627B30A8600F39FF9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9EE3527B30A8600F39FF9 /* HomeView.swift */; };
 		5CB9EE3827B30A8800F39FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9EE3727B30A8800F39FF9 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		5CA0D64627B56D84003DCE71 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		5CA0D64927B5824E003DCE71 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
+		5CA0D64E27B73D34003DCE71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5CB9EE3027B30A8600F39FF9 /* dnd-tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dnd-tools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB9EE3327B30A8600F39FF9 /* dnd_toolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dnd_toolsApp.swift; sourceTree = "<group>"; };
 		5CB9EE3527B30A8600F39FF9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				5CB9EE3527B30A8600F39FF9 /* HomeView.swift */,
+				5CA0D64E27B73D34003DCE71 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				5CB9EE5B27B3F3D600F39FF9 /* NameAPIService.swift in Sources */,
 				5CB9EE4C27B30CEA00F39FF9 /* RandomNPCInputView.swift in Sources */,
 				5CB9EE5227B3188D00F39FF9 /* NPC.swift in Sources */,
+				5CA0D64F27B73D34003DCE71 /* HomeViewModel.swift in Sources */,
 				5CB9EE5927B35A0700F39FF9 /* Int+Utilities.swift in Sources */,
 				5CB9EE4A27B30CD700F39FF9 /* RandomNPC.swift in Sources */,
 				5CB9EE6127B3F68200F39FF9 /* GlobalDependencyContainer.swift in Sources */,
