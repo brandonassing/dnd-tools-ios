@@ -14,78 +14,78 @@ extension RandomNPC {
 		private var disposables = Set<AnyCancellable>()
 		
 		var body: some View {
-			ScrollView {
-				VStack(spacing: 0) {
-					
-					// TODO: Can maybe turn into generic component using Generics and a ForEach?
-					Group {
-						Text("Race")
-							.textStyle(.sectionHeader)
-						let anyRaceText = "Any race"
-						Menu(self.selectedRace?.displayName ?? anyRaceText) {
-							Button(anyRaceText, action: { self.viewModel.inputs.selectedRace.send(nil) })
-							
-							ForEach(self.viewModel.races, id: \.rawValue) { race in
-								Button(race.displayName, action: { self.viewModel.inputs.selectedRace.send(race) })
-							}
+			VStack(spacing: 0) {
+				
+				// TODO: Can maybe turn into generic component using Generics and a ForEach?
+				Group {
+					Text("Race")
+						.textStyle(.sectionHeader)
+					let anyRaceText = "Any race"
+					Menu(self.selectedRace?.displayName ?? anyRaceText) {
+						Button(anyRaceText, action: { self.viewModel.inputs.selectedRace.send(nil) })
+						
+						ForEach(self.viewModel.races, id: \.rawValue) { race in
+							Button(race.displayName, action: { self.viewModel.inputs.selectedRace.send(race) })
 						}
-						.onReceive(self.viewModel.outputs.selectedRace, perform: { race in
-							self.selectedRace = race
-						})
 					}
-					
-					Spacer(minLength: 20)
-
-					Group {
-						Text("Age")
-							.textStyle(.sectionHeader)
-						let anyAgeText = "Any age"
-						Menu(self.selectedAge?.displayName ?? anyAgeText) {
-							Button(anyAgeText, action: { self.viewModel.inputs.selectedAge.send(nil) })
-							
-							ForEach(self.viewModel.ageGroups, id: \.rawValue) { age in
-								Button(age.displayName, action: { self.viewModel.inputs.selectedAge.send(age) })
-							}
-						}
-						.onReceive(self.viewModel.outputs.selectedAge, perform: { age in
-							self.selectedAge = age
-						})
-					}
-					
-					Spacer(minLength: 20)
-
-					Group {
-						Text("Gender")
-							.textStyle(.sectionHeader)
-						let anyGenderText = "Any gender"
-						Menu(self.selectedGender?.displayName ?? anyGenderText) {
-							Button(anyGenderText, action: { self.viewModel.inputs.selectedGender.send(nil) })
-							
-							ForEach(self.viewModel.genders, id: \.rawValue) { gender in
-								Button(gender.displayName, action: { self.viewModel.inputs.selectedGender.send(gender) })
-							}
-						}
-						.onReceive(self.viewModel.outputs.selectedGender, perform: { gender in
-							self.selectedGender = gender
-						})
-					}
-					
-					Spacer(minLength: 50)
-
-					PrimaryButtonView(text: "Generate", action: viewModel.inputs.generate.send)
-					.onReceive(self.viewModel.outputs.npc, perform: { npc in
-						if let npc = npc {
-							self.generatedNPC = npc
-						}
+					.onReceive(self.viewModel.outputs.selectedRace, perform: { race in
+						self.selectedRace = race
 					})
-					.sheet(item: self.$generatedNPC) { npc in
-						RandomNPC.DetailsView(npc: npc)
-					}
 				}
-				.padding()
+				
+				Spacer()
+					.frame(height: 20)
+
+				Group {
+					Text("Age")
+						.textStyle(.sectionHeader)
+					let anyAgeText = "Any age"
+					Menu(self.selectedAge?.displayName ?? anyAgeText) {
+						Button(anyAgeText, action: { self.viewModel.inputs.selectedAge.send(nil) })
+						
+						ForEach(self.viewModel.ageGroups, id: \.rawValue) { age in
+							Button(age.displayName, action: { self.viewModel.inputs.selectedAge.send(age) })
+						}
+					}
+					.onReceive(self.viewModel.outputs.selectedAge, perform: { age in
+						self.selectedAge = age
+					})
+				}
+				
+				Spacer()
+					.frame(height: 20)
+
+				Group {
+					Text("Gender")
+						.textStyle(.sectionHeader)
+					let anyGenderText = "Any gender"
+					Menu(self.selectedGender?.displayName ?? anyGenderText) {
+						Button(anyGenderText, action: { self.viewModel.inputs.selectedGender.send(nil) })
+						
+						ForEach(self.viewModel.genders, id: \.rawValue) { gender in
+							Button(gender.displayName, action: { self.viewModel.inputs.selectedGender.send(gender) })
+						}
+					}
+					.onReceive(self.viewModel.outputs.selectedGender, perform: { gender in
+						self.selectedGender = gender
+					})
+				}
+				
+				Spacer()
+
+				PrimaryButtonView(text: "Generate", action: viewModel.inputs.generate.send)
+				.onReceive(self.viewModel.outputs.npc, perform: { npc in
+					if let npc = npc {
+						self.generatedNPC = npc
+					}
+				})
+				.sheet(item: self.$generatedNPC) { npc in
+					RandomNPC.DetailsView(npc: npc)
+				}
 			}
-			.frame(maxWidth: .infinity)
+			.padding()
 			.background(StyleGuide.Color.background)
+			.navigationBarTitle("NPC Generator")
 		}
 	}
 

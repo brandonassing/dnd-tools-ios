@@ -9,7 +9,10 @@ class NameAPIService: NameService {
 		
 	func getRandomCharacterName(characterType: String, limit: Int) -> AnyPublisher<Result<[String], Error>, Never> {
 		
-		let url = URL(string: self.baseUrl + "?type=\(characterType)&n=\(limit)&as_json=1")!
+		guard let url = URL(string: self.baseUrl + "?type=\(characterType)&n=\(limit)&as_json=1") else {
+			return Just(Result.failure(GenericError.apiError))
+				.eraseToAnyPublisher()
+		}
 		
 		return self.session.dataTaskPublisher(for: URLRequest(url: url))
 			.tryMap({ data, response in
