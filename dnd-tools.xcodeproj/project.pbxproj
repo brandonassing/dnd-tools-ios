@@ -78,6 +78,15 @@
 			path = ComponentViews;
 			sourceTree = "<group>";
 		};
+		5CA0D65627B74FEC003DCE71 /* NameService */ = {
+			isa = PBXGroup;
+			children = (
+				5CB9EE5C27B3F3DF00F39FF9 /* NameService.swift */,
+				5CB9EE5A27B3F3D600F39FF9 /* NameAPIService.swift */,
+			);
+			path = NameService;
+			sourceTree = "<group>";
+		};
 		5CB9EE2727B30A8600F39FF9 = {
 			isa = PBXGroup;
 			children = (
@@ -121,8 +130,7 @@
 		5CB9EE4127B30A9000F39FF9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5CB9EE5A27B3F3D600F39FF9 /* NameAPIService.swift */,
-				5CB9EE5C27B3F3DF00F39FF9 /* NameService.swift */,
+				5CA0D65627B74FEC003DCE71 /* NameService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
