@@ -16,7 +16,7 @@ enum Gender: String, CaseIterable {
 	case female
 }
 
-extension Gender {
+extension Gender: Displayable {
 	var displayName: String {
 		return self.rawValue.capitalizingFirstLetter()
 	}
@@ -29,7 +29,7 @@ enum AgeGroup: String, CaseIterable {
 	case senior
 }
 
-extension AgeGroup {
+extension AgeGroup: Displayable {
 	var displayName: String {
 		return self.rawValue.capitalizingFirstLetter()
 	}
@@ -44,8 +44,8 @@ enum BodyType: String, CaseIterable {
 	case overweight
 }
 
-extension BodyType {
-	var name: String {
+extension BodyType: Displayable {
+	var displayName: String {
 		return self.rawValue
 	}
 }
@@ -62,7 +62,7 @@ enum Race: String, CaseIterable {
 	case tiefling
 }
 
-extension Race {
+extension Race: Displayable {
 	var isCommon: Bool {
 		switch self {
 		case .human, .halfling, .dwarf, .elf, .halfElf:

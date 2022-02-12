@@ -21,13 +21,12 @@ extension RandomNPC {
 						.textStyle(.sectionSubheader)
 					Text("Height: \(self.npc.heightCm.toFeetAndInches().feet)'\(self.npc.heightCm.toFeetAndInches().inches)\"")
 						.textStyle(.standard)
-					Text("Body type: \(self.npc.bodyType.name)")
+					Text("Body type: \(self.npc.bodyType.displayName)")
 						.textStyle(.standard)
 				}
 				.padding()
 				.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
 				.navigationTitle(self.npc.name)
-				.navigationBarTitleDisplayMode(.large)
 				.toolbar {
 					ToolbarItem(placement: .navigationBarLeading) {
 						Button(action: { self.presentationMode.wrappedValue.dismiss() }) {

@@ -28,7 +28,7 @@ struct HomeView: View {
 						}
 						.frame(maxWidth: .infinity)
 						.background(StyleGuide.Color.tertiary)
-						.cornerRadius(5)
+						.cornerRadius(8)
 					}
 					.padding(.leading)
 					.padding(.trailing)

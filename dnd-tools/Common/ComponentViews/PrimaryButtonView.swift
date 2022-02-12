@@ -15,7 +15,7 @@ struct PrimaryButtonView: View {
 			}
 		}
 		.background(StyleGuide.Color.secondary)
-		.cornerRadius(5)
+		.cornerRadius(8)
 	}
 }
 
