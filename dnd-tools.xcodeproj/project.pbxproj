@@ -11,6 +11,11 @@
 		5CA0D64A27B5824E003DCE71 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D64927B5824E003DCE71 /* PrimaryButtonView.swift */; };
 		5CA0D64D27B6F31D003DCE71 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA0D64C27B6F31D003DCE71 /* CombineExt */; };
 		5CA0D64F27B73D34003DCE71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D64E27B73D34003DCE71 /* HomeViewModel.swift */; };
+		5CA0D65227B74F3E003DCE71 /* LootGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D65127B74F3E003DCE71 /* LootGenerationView.swift */; };
+		5CA0D65427B74F4B003DCE71 /* LootGenerationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D65327B74F4B003DCE71 /* LootGenerationViewModel.swift */; };
+		5CA0D65827B75043003DCE71 /* HasLootService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D65727B75043003DCE71 /* HasLootService.swift */; };
+		5CA0D65A27B75058003DCE71 /* LootService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D65927B75058003DCE71 /* LootService.swift */; };
+		5CA0D65D27B7506A003DCE71 /* LootAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D65C27B7506A003DCE71 /* LootAPIService.swift */; };
 		5CB9EE3427B30A8600F39FF9 /* dnd_toolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9EE3327B30A8600F39FF9 /* dnd_toolsApp.swift */; };
 		5CB9EE3627B30A8600F39FF9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9EE3527B30A8600F39FF9 /* HomeView.swift */; };
 		5CB9EE3827B30A8800F39FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9EE3727B30A8800F39FF9 /* Assets.xcassets */; };
@@ -36,6 +41,11 @@
 		5CA0D64627B56D84003DCE71 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		5CA0D64927B5824E003DCE71 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
 		5CA0D64E27B73D34003DCE71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5CA0D65127B74F3E003DCE71 /* LootGenerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootGenerationView.swift; sourceTree = "<group>"; };
+		5CA0D65327B74F4B003DCE71 /* LootGenerationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootGenerationViewModel.swift; sourceTree = "<group>"; };
+		5CA0D65727B75043003DCE71 /* HasLootService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasLootService.swift; sourceTree = "<group>"; };
+		5CA0D65927B75058003DCE71 /* LootService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootService.swift; sourceTree = "<group>"; };
+		5CA0D65C27B7506A003DCE71 /* LootAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootAPIService.swift; sourceTree = "<group>"; };
 		5CB9EE3027B30A8600F39FF9 /* dnd-tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dnd-tools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB9EE3327B30A8600F39FF9 /* dnd_toolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dnd_toolsApp.swift; sourceTree = "<group>"; };
 		5CB9EE3527B30A8600F39FF9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -76,6 +86,24 @@
 				5CA0D64927B5824E003DCE71 /* PrimaryButtonView.swift */,
 			);
 			path = ComponentViews;
+			sourceTree = "<group>";
+		};
+		5CA0D65027B74EFC003DCE71 /* LootGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				5CA0D65127B74F3E003DCE71 /* LootGenerationView.swift */,
+				5CA0D65327B74F4B003DCE71 /* LootGenerationViewModel.swift */,
+			);
+			path = LootGenerator;
+			sourceTree = "<group>";
+		};
+		5CA0D65B27B7505C003DCE71 /* LootService */ = {
+			isa = PBXGroup;
+			children = (
+				5CA0D65927B75058003DCE71 /* LootService.swift */,
+				5CA0D65C27B7506A003DCE71 /* LootAPIService.swift */,
+			);
+			path = LootService;
 			sourceTree = "<group>";
 		};
 		5CB9EE2727B30A8600F39FF9 = {
@@ -123,6 +151,7 @@
 			children = (
 				5CB9EE5A27B3F3D600F39FF9 /* NameAPIService.swift */,
 				5CB9EE5C27B3F3DF00F39FF9 /* NameService.swift */,
+				5CA0D65B27B7505C003DCE71 /* LootService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -143,6 +172,7 @@
 			children = (
 				5CB9EE4727B30B9A00F39FF9 /* Home */,
 				5CB9EE4827B30B9E00F39FF9 /* RandomNPC */,
+				5CA0D65027B74EFC003DCE71 /* LootGenerator */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -161,6 +191,7 @@
 				5CB9EE6027B3F68200F39FF9 /* GlobalDependencyContainer.swift */,
 				5CB9EE6227B3F68B00F39FF9 /* HasNameService.swift */,
 				5CB9EE6427B3F69400F39FF9 /* HasNameRepository.swift */,
+				5CA0D65727B75043003DCE71 /* HasLootService.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -279,14 +310,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CA0D65427B74F4B003DCE71 /* LootGenerationViewModel.swift in Sources */,
 				5CB9EE5B27B3F3D600F39FF9 /* NameAPIService.swift in Sources */,
 				5CB9EE4C27B30CEA00F39FF9 /* RandomNPCInputView.swift in Sources */,
 				5CB9EE5227B3188D00F39FF9 /* NPC.swift in Sources */,
 				5CA0D64F27B73D34003DCE71 /* HomeViewModel.swift in Sources */,
 				5CB9EE5927B35A0700F39FF9 /* Int+Utilities.swift in Sources */,
+				5CA0D65227B74F3E003DCE71 /* LootGenerationView.swift in Sources */,
+				5CA0D65827B75043003DCE71 /* HasLootService.swift in Sources */,
 				5CB9EE4A27B30CD700F39FF9 /* RandomNPC.swift in Sources */,
 				5CB9EE6127B3F68200F39FF9 /* GlobalDependencyContainer.swift in Sources */,
 				5CB9EE5F27B3F5CB00F39FF9 /* NameRepository.swift in Sources */,
+				5CA0D65A27B75058003DCE71 /* LootService.swift in Sources */,
 				5CA0D64A27B5824E003DCE71 /* PrimaryButtonView.swift in Sources */,
 				5CB9EE5427B31F7600F39FF9 /* RandomNPCDetailsView.swift in Sources */,
 				5CA0D64727B56D84003DCE71 /* StyleGuide.swift in Sources */,
@@ -299,6 +334,7 @@
 				5CB9EE5627B3564400F39FF9 /* String+Utilities.swift in Sources */,
 				5CB9EE4E27B310D500F39FF9 /* RandomNPCInputViewModel.swift in Sources */,
 				5CB9EE6527B3F69400F39FF9 /* HasNameRepository.swift in Sources */,
+				5CA0D65D27B7506A003DCE71 /* LootAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
