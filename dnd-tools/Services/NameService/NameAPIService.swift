@@ -23,10 +23,7 @@ class NameAPIService: NameService {
 				return data
 			})
 			.decode(type: [String].self, decoder: JSONDecoder())
-			.map({ names in
-				return Result.success(names)
-			})
-			.replaceError(with: .failure(GenericError.apiError))
+			.mapToResult()
 			.eraseToAnyPublisher()
 	}
 }

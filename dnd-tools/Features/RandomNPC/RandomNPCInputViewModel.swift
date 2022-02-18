@@ -74,7 +74,7 @@ extension RandomNPC {
 					return (heightCm: Int(height), bodyType: bodyType, race: race, ageGroup: ageGroup, gender: gender)
 				})
 				.share()
-						
+			
 			let npcNameRequest = npcInfo
 				.map({ npcInfo -> AnyPublisher<Result<String, Error>, Never> in
 					guard let npcInfo = npcInfo else {
@@ -85,28 +85,12 @@ extension RandomNPC {
 				})
 				.switchToLatest()
 			
-			// TODO: handle success/failure parsing better
 			let npcNameSuccess = npcNameRequest
-				.filter({
-					switch $0 {
-					case .success:
-						return true
-					case .failure:
-						return false
-					}
-				})
-				.map({ result -> String? in
-					switch result {
-					case .success(let name):
-						return name
-					case .failure:
-						return nil
-					}
-				})
+				.unwrapSuccess()
 			
 			let npc = Publishers.Zip(npcInfo, npcNameSuccess)
 				.map({ (npcInfo, name) -> NPC? in
-					guard let npcInfo = npcInfo, let name = name else {
+					guard let npcInfo = npcInfo else {
 						return nil
 					}
 					return NPC(name: name, heightCm: npcInfo.heightCm, bodyType: npcInfo.bodyType, race: npcInfo.race, ageGroup: npcInfo.ageGroup, gender: npcInfo.gender)

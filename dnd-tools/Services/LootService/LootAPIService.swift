@@ -1,7 +1,6 @@
 
 import Foundation
 import Combine
-import CombineExt
 
 class LootAPIService: LootService {
 	

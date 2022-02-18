@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C9E880127BFE1C2006CE13F /* ResultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E880027BFE1C2006CE13F /* ResultProtocol.swift */; };
+		5C9E880327BFE3EB006CE13F /* Result+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E880227BFE3EB006CE13F /* Result+Combine.swift */; };
 		5CA0D64727B56D84003DCE71 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D64627B56D84003DCE71 /* StyleGuide.swift */; };
 		5CA0D64A27B5824E003DCE71 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D64927B5824E003DCE71 /* PrimaryButtonView.swift */; };
 		5CA0D64D27B6F31D003DCE71 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA0D64C27B6F31D003DCE71 /* CombineExt */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C9E880027BFE1C2006CE13F /* ResultProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProtocol.swift; sourceTree = "<group>"; };
+		5C9E880227BFE3EB006CE13F /* Result+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Combine.swift"; sourceTree = "<group>"; };
 		5CA0D64627B56D84003DCE71 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		5CA0D64927B5824E003DCE71 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
 		5CA0D64E27B73D34003DCE71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C9E880427BFE3EE006CE13F /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				5C9E880027BFE1C2006CE13F /* ResultProtocol.swift */,
+				5C9E880227BFE3EB006CE13F /* Result+Combine.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		5CA0D64827B5822D003DCE71 /* ComponentViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +254,7 @@
 		5CB9EE5727B3564700F39FF9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5C9E880427BFE3EE006CE13F /* Result */,
 				5CB9EE5527B3564400F39FF9 /* String+Utilities.swift */,
 				5CB9EE5827B35A0700F39FF9 /* Int+Utilities.swift */,
 				5CB9EE6627B3FA9000F39FF9 /* GenericError.swift */,
@@ -328,6 +342,7 @@
 				5CB9EE5B27B3F3D600F39FF9 /* NameAPIService.swift in Sources */,
 				5CB9EE4C27B30CEA00F39FF9 /* RandomNPCInputView.swift in Sources */,
 				5CB9EE5227B3188D00F39FF9 /* NPC.swift in Sources */,
+				5C9E880127BFE1C2006CE13F /* ResultProtocol.swift in Sources */,
 				5CA0D64F27B73D34003DCE71 /* HomeViewModel.swift in Sources */,
 				5CB9EE5927B35A0700F39FF9 /* Int+Utilities.swift in Sources */,
 				5CA0D65227B74F3E003DCE71 /* LootGenerationView.swift in Sources */,
@@ -349,6 +364,7 @@
 				5CB9EE5027B3151A00F39FF9 /* ViewModel.swift in Sources */,
 				5CB9EE5627B3564400F39FF9 /* String+Utilities.swift in Sources */,
 				5CB9EE4E27B310D500F39FF9 /* RandomNPCInputViewModel.swift in Sources */,
+				5C9E880327BFE3EB006CE13F /* Result+Combine.swift in Sources */,
 				5CB9EE6527B3F69400F39FF9 /* HasNameRepository.swift in Sources */,
 				5CA0D65D27B7506A003DCE71 /* LootAPIService.swift in Sources */,
 			);
