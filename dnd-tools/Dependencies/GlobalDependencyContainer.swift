@@ -16,4 +16,6 @@ class GlobalDependencyContainer: AllDependencies {
 	lazy var lootService: LootService = {
 		LootAPIService()
 	}()
+	
+	private init() {}
 }
