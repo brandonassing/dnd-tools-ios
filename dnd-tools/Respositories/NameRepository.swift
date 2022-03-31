@@ -16,12 +16,17 @@ class CharacterNameRepository: NameRepository {
 	}
 	
 	func getRandomName(for race: Race, _ gender: Gender) -> AnyPublisher<Result<String, Error>, Never> {
-		return self.nameService.getRandomCharacterName(characterType: self.buildCharacterType(for: race, gender), limit: 1)
+		return self.nameService.getRandomCharacterNames(characterType: self.buildCharacterType(for: race, gender), limit: 1)
 			.map({ result in
-				if case .success(let names) = result, let name = names.first {
-					return .success(name)
+				switch result {
+				case .success(let names):
+					guard let firstName = names.first else {
+						return .failure(GenericError.unknown)
+					}
+					return .success(firstName)
+				case .failure(let error):
+					return .failure(error)
 				}
-				return .failure(GenericError.apiError)
 			})
 			.eraseToAnyPublisher()
 	}

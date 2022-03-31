@@ -18,6 +18,7 @@
 		5CA0D65827B75043003DCE71 /* HasLootService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D65727B75043003DCE71 /* HasLootService.swift */; };
 		5CA0D65A27B75058003DCE71 /* LootService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D65927B75058003DCE71 /* LootService.swift */; };
 		5CA0D65D27B7506A003DCE71 /* LootAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D65C27B7506A003DCE71 /* LootAPIService.swift */; };
+		5CAC387327F5322100AC0224 /* ResponseParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC387227F5322100AC0224 /* ResponseParsing.swift */; };
 		5CAFAE0127B7E50900A0CAFF /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAFAE0027B7E50900A0CAFF /* DropdownView.swift */; };
 		5CAFAE0327B7EF4800A0CAFF /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAFAE0227B7EF4800A0CAFF /* Displayable.swift */; };
 		5CB9EE3427B30A8600F39FF9 /* dnd_toolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9EE3327B30A8600F39FF9 /* dnd_toolsApp.swift */; };
@@ -38,7 +39,6 @@
 		5CB9EE6127B3F68200F39FF9 /* GlobalDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9EE6027B3F68200F39FF9 /* GlobalDependencyContainer.swift */; };
 		5CB9EE6327B3F68B00F39FF9 /* HasNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9EE6227B3F68B00F39FF9 /* HasNameService.swift */; };
 		5CB9EE6527B3F69400F39FF9 /* HasNameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9EE6427B3F69400F39FF9 /* HasNameRepository.swift */; };
-		5CB9EE6727B3FA9000F39FF9 /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9EE6627B3FA9000F39FF9 /* GenericError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +52,7 @@
 		5CA0D65727B75043003DCE71 /* HasLootService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasLootService.swift; sourceTree = "<group>"; };
 		5CA0D65927B75058003DCE71 /* LootService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootService.swift; sourceTree = "<group>"; };
 		5CA0D65C27B7506A003DCE71 /* LootAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootAPIService.swift; sourceTree = "<group>"; };
+		5CAC387227F5322100AC0224 /* ResponseParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParsing.swift; sourceTree = "<group>"; };
 		5CAFAE0027B7E50900A0CAFF /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		5CAFAE0227B7EF4800A0CAFF /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
 		5CB9EE3027B30A8600F39FF9 /* dnd-tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dnd-tools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +74,6 @@
 		5CB9EE6027B3F68200F39FF9 /* GlobalDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDependencyContainer.swift; sourceTree = "<group>"; };
 		5CB9EE6227B3F68B00F39FF9 /* HasNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNameService.swift; sourceTree = "<group>"; };
 		5CB9EE6427B3F69400F39FF9 /* HasNameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNameRepository.swift; sourceTree = "<group>"; };
-		5CB9EE6627B3FA9000F39FF9 /* GenericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,9 +255,9 @@
 			isa = PBXGroup;
 			children = (
 				5C9E880427BFE3EE006CE13F /* Result */,
+				5CAC387227F5322100AC0224 /* ResponseParsing.swift */,
 				5CB9EE5527B3564400F39FF9 /* String+Utilities.swift */,
 				5CB9EE5827B35A0700F39FF9 /* Int+Utilities.swift */,
-				5CB9EE6627B3FA9000F39FF9 /* GenericError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -347,6 +347,7 @@
 				5CB9EE5927B35A0700F39FF9 /* Int+Utilities.swift in Sources */,
 				5CA0D65227B74F3E003DCE71 /* LootGenerationView.swift in Sources */,
 				5CA0D65827B75043003DCE71 /* HasLootService.swift in Sources */,
+				5CAC387327F5322100AC0224 /* ResponseParsing.swift in Sources */,
 				5CB9EE4A27B30CD700F39FF9 /* RandomNPC.swift in Sources */,
 				5CB9EE6127B3F68200F39FF9 /* GlobalDependencyContainer.swift in Sources */,
 				5CB9EE5F27B3F5CB00F39FF9 /* NameRepository.swift in Sources */,
@@ -354,7 +355,6 @@
 				5CA0D64A27B5824E003DCE71 /* PrimaryButtonView.swift in Sources */,
 				5CB9EE5427B31F7600F39FF9 /* RandomNPCDetailsView.swift in Sources */,
 				5CA0D64727B56D84003DCE71 /* StyleGuide.swift in Sources */,
-				5CB9EE6727B3FA9000F39FF9 /* GenericError.swift in Sources */,
 				5CAFAE0327B7EF4800A0CAFF /* Displayable.swift in Sources */,
 				5CB9EE5D27B3F3DF00F39FF9 /* NameService.swift in Sources */,
 				5CB9EE3627B30A8600F39FF9 /* HomeView.swift in Sources */,
