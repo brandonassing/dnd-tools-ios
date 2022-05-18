@@ -62,7 +62,23 @@ extension URLSession.DataTaskPublisher {
 	}
 	
 	func parseAPIResponse<ResponseType, ErrorType>(resultType: ResponseType.Type, errorType: ErrorType.Type) -> AnyPublisher<ResponseType, Error> where ResponseType: Decodable, ErrorType: APIError & Decodable {
-		// TODO: implement
-		return Empty().eraseToAnyPublisher()
+		return self
+			.tryMap({ data, response in
+				guard let response = response as? HTTPURLResponse else {
+					throw GenericError.unknown
+				}
+				do {
+					if !(200...299).contains(response.statusCode) {
+						let responseError = try JSONDecoder().decode(ErrorType.self, from: data)
+						throw responseError
+					} else {
+						let responseSuccess = try JSONDecoder().decode(ResponseType.self, from: data)
+						return responseSuccess
+					}
+				} catch {
+					throw GenericError.decoding
+				}
+			})
+			.eraseToAnyPublisher()
 	}
 }
