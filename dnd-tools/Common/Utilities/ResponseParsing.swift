@@ -36,6 +36,19 @@ struct BasicAPIError: APIError {
 	let reason: APIErrorReason
 }
 
+func == (lhs: APIErrorReason?, rhs: APIErrorReason?) -> Bool {
+	return lhs?.rawValue.uppercased() == rhs?.rawValue.uppercased()
+}
+
+extension Error {
+	func isAPIError(statusCode: Int? = nil, reason: APIErrorReason? = nil) -> Bool {
+		guard let apiError = self as? APIError else { return false }
+		guard statusCode == nil || apiError.statusCode == statusCode else { return false }
+		guard reason == nil || apiError.reason == reason else { return false }
+		return true
+	}
+}
+
 extension URLSession.DataTaskPublisher {
 	func parseAPIResponse<ResponseType: Decodable>(resultType: ResponseType.Type) -> AnyPublisher<ResponseType, Error> {
 		return self

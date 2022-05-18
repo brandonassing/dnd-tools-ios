@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C6A510828353808007B0CCF /* LootAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6A510728353808007B0CCF /* LootAPIError.swift */; };
 		5C6A510A28353899007B0CCF /* LootAPIErrorReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6A510928353899007B0CCF /* LootAPIErrorReason.swift */; };
+		5C6A510C28354344007B0CCF /* ErrorFilterer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6A510B28354344007B0CCF /* ErrorFilterer.swift */; };
 		5C9E880127BFE1C2006CE13F /* ResultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E880027BFE1C2006CE13F /* ResultProtocol.swift */; };
 		5C9E880327BFE3EB006CE13F /* Result+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E880227BFE3EB006CE13F /* Result+Combine.swift */; };
 		5CA0D64727B56D84003DCE71 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D64627B56D84003DCE71 /* StyleGuide.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		5C6A510728353808007B0CCF /* LootAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootAPIError.swift; sourceTree = "<group>"; };
 		5C6A510928353899007B0CCF /* LootAPIErrorReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootAPIErrorReason.swift; sourceTree = "<group>"; };
+		5C6A510B28354344007B0CCF /* ErrorFilterer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFilterer.swift; sourceTree = "<group>"; };
 		5C9E880027BFE1C2006CE13F /* ResultProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProtocol.swift; sourceTree = "<group>"; };
 		5C9E880227BFE3EB006CE13F /* Result+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Combine.swift"; sourceTree = "<group>"; };
 		5CA0D64627B56D84003DCE71 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				5CAC387227F5322100AC0224 /* ResponseParsing.swift */,
 				5CB9EE5527B3564400F39FF9 /* String+Utilities.swift */,
 				5CB9EE5827B35A0700F39FF9 /* Int+Utilities.swift */,
+				5C6A510B28354344007B0CCF /* ErrorFilterer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				5C6A510828353808007B0CCF /* LootAPIError.swift in Sources */,
 				5CAFAE0327B7EF4800A0CAFF /* Displayable.swift in Sources */,
 				5CB9EE5D27B3F3DF00F39FF9 /* NameService.swift in Sources */,
+				5C6A510C28354344007B0CCF /* ErrorFilterer.swift in Sources */,
 				5CB9EE3627B30A8600F39FF9 /* HomeView.swift in Sources */,
 				5CB9EE3427B30A8600F39FF9 /* dnd_toolsApp.swift in Sources */,
 				5CAFAE0127B7E50900A0CAFF /* DropdownView.swift in Sources */,
