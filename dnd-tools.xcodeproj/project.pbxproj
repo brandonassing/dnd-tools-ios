@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C6A510828353808007B0CCF /* LootAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6A510728353808007B0CCF /* LootAPIError.swift */; };
+		5C6A510A28353899007B0CCF /* LootAPIErrorReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6A510928353899007B0CCF /* LootAPIErrorReason.swift */; };
 		5C9E880127BFE1C2006CE13F /* ResultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E880027BFE1C2006CE13F /* ResultProtocol.swift */; };
 		5C9E880327BFE3EB006CE13F /* Result+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E880227BFE3EB006CE13F /* Result+Combine.swift */; };
 		5CA0D64727B56D84003DCE71 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D64627B56D84003DCE71 /* StyleGuide.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C6A510728353808007B0CCF /* LootAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootAPIError.swift; sourceTree = "<group>"; };
+		5C6A510928353899007B0CCF /* LootAPIErrorReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootAPIErrorReason.swift; sourceTree = "<group>"; };
 		5C9E880027BFE1C2006CE13F /* ResultProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProtocol.swift; sourceTree = "<group>"; };
 		5C9E880227BFE3EB006CE13F /* Result+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Combine.swift"; sourceTree = "<group>"; };
 		5CA0D64627B56D84003DCE71 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 			children = (
 				5CA0D65927B75058003DCE71 /* LootService.swift */,
 				5CA0D65C27B7506A003DCE71 /* LootAPIService.swift */,
+				5C6A510728353808007B0CCF /* LootAPIError.swift */,
+				5C6A510928353899007B0CCF /* LootAPIErrorReason.swift */,
 			);
 			path = LootService;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CA0D65427B74F4B003DCE71 /* LootGenerationViewModel.swift in Sources */,
+				5C6A510A28353899007B0CCF /* LootAPIErrorReason.swift in Sources */,
 				5CB9EE5B27B3F3D600F39FF9 /* NameAPIService.swift in Sources */,
 				5CB9EE4C27B30CEA00F39FF9 /* RandomNPCInputView.swift in Sources */,
 				5CB9EE5227B3188D00F39FF9 /* NPC.swift in Sources */,
@@ -355,6 +362,7 @@
 				5CA0D64A27B5824E003DCE71 /* PrimaryButtonView.swift in Sources */,
 				5CB9EE5427B31F7600F39FF9 /* RandomNPCDetailsView.swift in Sources */,
 				5CA0D64727B56D84003DCE71 /* StyleGuide.swift in Sources */,
+				5C6A510828353808007B0CCF /* LootAPIError.swift in Sources */,
 				5CAFAE0327B7EF4800A0CAFF /* Displayable.swift in Sources */,
 				5CB9EE5D27B3F3DF00F39FF9 /* NameService.swift in Sources */,
 				5CB9EE3627B30A8600F39FF9 /* HomeView.swift in Sources */,
