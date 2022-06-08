@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C2C43972851314000FA5C77 /* RandomNPCDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2C43962851314000FA5C77 /* RandomNPCDetailsViewModel.swift */; };
 		5C9E880127BFE1C2006CE13F /* ResultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E880027BFE1C2006CE13F /* ResultProtocol.swift */; };
 		5C9E880327BFE3EB006CE13F /* Result+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9E880227BFE3EB006CE13F /* Result+Combine.swift */; };
 		5CA0D64727B56D84003DCE71 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0D64627B56D84003DCE71 /* StyleGuide.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C2C43962851314000FA5C77 /* RandomNPCDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNPCDetailsViewModel.swift; sourceTree = "<group>"; };
 		5C9E880027BFE1C2006CE13F /* ResultProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProtocol.swift; sourceTree = "<group>"; };
 		5C9E880227BFE3EB006CE13F /* Result+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Combine.swift"; sourceTree = "<group>"; };
 		5CA0D64627B56D84003DCE71 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				5CB9EE4B27B30CEA00F39FF9 /* RandomNPCInputView.swift */,
 				5CB9EE4D27B310D500F39FF9 /* RandomNPCInputViewModel.swift */,
 				5CB9EE5327B31F7600F39FF9 /* RandomNPCDetailsView.swift */,
+				5C2C43962851314000FA5C77 /* RandomNPCDetailsViewModel.swift */,
 			);
 			path = RandomNPC;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				5CA0D65A27B75058003DCE71 /* LootService.swift in Sources */,
 				5CA0D64A27B5824E003DCE71 /* PrimaryButtonView.swift in Sources */,
 				5CB9EE5427B31F7600F39FF9 /* RandomNPCDetailsView.swift in Sources */,
+				5C2C43972851314000FA5C77 /* RandomNPCDetailsViewModel.swift in Sources */,
 				5CA0D64727B56D84003DCE71 /* StyleGuide.swift in Sources */,
 				5CAFAE0327B7EF4800A0CAFF /* Displayable.swift in Sources */,
 				5CB9EE5D27B3F3DF00F39FF9 /* NameService.swift in Sources */,
