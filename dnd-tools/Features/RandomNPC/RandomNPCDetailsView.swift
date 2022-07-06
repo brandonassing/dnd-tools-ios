@@ -3,30 +3,41 @@ import SwiftUI
 
 extension RandomNPC {
 	struct DetailsView: View {
-		let npc: NPC
+		@StateObject private var viewModel: RandomNPC.DetailsViewModel
 		
 		@Environment(\.presentationMode) var presentationMode
 
+		init(npc: NPC) {
+			self._viewModel = StateObject(wrappedValue: RandomNPC.DetailsViewModel(npc: npc, dependencies: GlobalDependencyContainer.shared))
+		}
+		
 		var body: some View {
 			NavigationView {
-				VStack(alignment: .leading) {
-					let characterDescription = "\(self.npc.race.displayName) \(self.npc.ageGroup.displayName.lowercased()) (\(self.npc.gender.displayName.lowercased()))"
-					Text(characterDescription)
-						.textStyle(.sectionHeader)
-					
+				VStack {
+					VStack(alignment: .leading) {
+						let characterDescription = "\(self.viewModel.npc.race.displayName) \(self.viewModel.npc.ageGroup.displayName.lowercased()) (\(self.viewModel.npc.gender.displayName.lowercased()))"
+						Text(characterDescription)
+							.textStyle(.sectionHeader)
+						
+						Spacer()
+							.frame(height: 20)
+						
+						Text("Proportions")
+							.textStyle(.sectionSubheader)
+						Text("Height: \(self.viewModel.npc.heightCm.toFeetAndInches().feet)'\(self.viewModel.npc.heightCm.toFeetAndInches().inches)\"")
+							.textStyle(.standard)
+						Text("Body type: \(self.viewModel.npc.bodyType.displayName)")
+							.textStyle(.standard)
+						
+					}
+					.frame(maxWidth: .infinity, alignment: .topLeading)
+
 					Spacer()
-						.frame(height: 20)
 					
-					Text("Proportions")
-						.textStyle(.sectionSubheader)
-					Text("Height: \(self.npc.heightCm.toFeetAndInches().feet)'\(self.npc.heightCm.toFeetAndInches().inches)\"")
-						.textStyle(.standard)
-					Text("Body type: \(self.npc.bodyType.displayName)")
-						.textStyle(.standard)
+					PrimaryButtonView(text: "Get new name", action: viewModel.inputs.generateName.send)
 				}
 				.padding()
-				.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-				.navigationTitle(self.npc.name)
+				.navigationTitle(self.viewModel.npc.name)
 				.toolbar {
 					ToolbarItem(placement: .navigationBarLeading) {
 						Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
